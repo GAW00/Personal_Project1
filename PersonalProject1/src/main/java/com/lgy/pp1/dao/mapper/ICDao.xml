@@ -1,0 +1,54 @@
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.lgy.pp1.dao.ICDao">
+
+    <select id="clublist" parameterType="hashmap" resultType="com.lgy.pp1.dto.CDto">
+        select clubno, chairman, clubname, dues, account, accountbank, leftover, regulation from club
+    </select>
+    
+    <select id="clubwrite" parameterType="hashmap">
+		insert into club (culbno, chairman, clubname) values(clubno_seq.nextval, #{chairman}, #{clubname})
+    </select>
+    
+    <select id="clubview" parameterType="hashmap" resultType="com.lgy.pp1.dto.CDto">
+        select clubno, chairman, clubname, dues, account, accountbank, leftover, regulation from club where clubno=#{clubno}
+    </select>
+    
+    <update id="modify_clubname" parameterType="hashmap">
+		update club set clubname = #{clubname} where clubno=#{clubno}
+	</update>
+	
+	<update id="modify_chairman" parameterType="hashmap">
+		update club set chairman = #{clubname} where clubno=#{clubno}
+	</update>
+	
+	<update id="modify_dues" parameterType="hashmap">
+		update club set dues= #{clubname} where clubno=#{clubno}
+	</update>
+	
+	<update id="modify_account" parameterType="hashmap">
+		update club set account = #{clubname} where clubno=#{clubno}
+	</update>
+	
+	<update id="modify_accountbank" parameterType="hashmap">
+		update club set accountbank = #{clubname} where clubno=#{clubno}
+	</update>
+	
+	<update id="modify_leftover" parameterType="hashmap">
+		update club set regulation = #{clubname} where clubno=#{clubno}
+	</update>
+	
+	
+	
+</mapper>
+
+<!-- 	private int clubno; -->
+<!-- 	private String chairman; -->
+<!-- 	private String clubname; -->
+<!-- 	private int dues; -->
+<!-- 	private String account; -->
+<!-- 	private String accountbank; -->
+<!-- 	private int leftover; -->
+<!-- 	private String regulation; -->
