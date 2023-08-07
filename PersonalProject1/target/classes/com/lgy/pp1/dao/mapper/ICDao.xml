@@ -9,7 +9,7 @@
     </select>
     
     <select id="clubwrite" parameterType="hashmap">
-		insert into club (culbno, chairman, clubname) values(clubno_seq.nextval, #{chairman}, #{clubname})
+		insert into club (culbno, chairman, clubname) values(club_seq.nextval, #{chairman}, #{clubname})
     </select>
     
     <select id="clubview" parameterType="hashmap" resultType="com.lgy.pp1.dto.CDto">
